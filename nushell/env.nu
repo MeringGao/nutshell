@@ -99,18 +99,18 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-$env.STARSHIP_CONFIG = $'($env.HOME)/projects/note/tools/starship/starship.toml'
+$env.STARSHIP_CONFIG = $'($env.HOME)/projects/nushell/starship/starship.toml'
 $env.DELL_IP = '31.200'
 $env.REDMI_IP = '31.102'
 $env.VPN_IP = '31.102'
 
-source ~/projects/note/tools/nushell/scripts/starship.nu
-source ~/projects/note/tools/nushell/scripts/alias.nu
-source ~/projects/note/tools/nushell/scripts/commands.nu
-source ~/projects/note/tools/nushell/scripts/docker.nu
-source ~/projects/note/tools/nushell/scripts/cargo.nu
-source ~/projects/note/tools/nushell/scripts/curl.nu
-source ~/projects/note/tools/nushell/scripts/git.nu
-source ~/projects/note/tools/nushell/scripts/pytest.nu
-source ~/projects/note/tools/nushell/scripts/rg.nu
-source ~/projects/note/tools/nushell/scripts/rustup.nu
+source ~/projects/nushell/nushell/scripts/starship.nu
+source ~/projects/nushell/nushell/scripts/alias.nu
+source ~/projects/nushell/nushell/scripts/commands.nu
+source ~/projects/nushell/nushell/scripts/docker.nu
+source ~/projects/nushell/nushell/scripts/cargo.nu
+source ~/projects/nushell/nushell/scripts/curl.nu
+source ~/projects/nushell/nushell/scripts/git.nu
+source ~/projects/nushell/nushell/scripts/pytest.nu
+source ~/projects/nushell/nushell/scripts/rg.nu
+source ~/projects/nushell/nushell/scripts/rustup.nu
