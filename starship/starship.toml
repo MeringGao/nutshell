@@ -17,9 +17,13 @@ $crystal\
 $custom\
 $sudo\
 $cmd_duration\
+$kubernetes\
 $line_break\
 $character
 """
+
+# format="$all"
+
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
 
@@ -29,14 +33,12 @@ add_newline = false
 # Set 'foo' as custom color palette
 palette = 'foo'
 
-# Define custom colors
+
 [palettes.foo]
 # Overwrite existing color
 blue = '21'
 # Define new color
 mustard = '#af8700'
-
-right_format = """$time"""
 
 [hostname]
 format = '[\($hostname\)]($style) '
@@ -45,12 +47,19 @@ format = '[\($hostname\)]($style) '
 format='[$symbol$branch(:$remote_branch)]($style) '
 
 [time]
-disabled=false
+disabled=true
 
 [directory]
 truncate_to_repo=false
 truncation_length=4
 use_logical_path=false
 
+[kubernetes]
+format = '[⛵$user\($namespace\)]($style) '
+disabled=false
+
 [python]
-format='[\[${pyenv_prefix}$virtualenv\]]($style) '
+format='[$symbol${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+
+[golang]
+format='[$symbol($version )]($style)'
