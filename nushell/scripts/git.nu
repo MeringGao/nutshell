@@ -773,3 +773,12 @@ export extern "git grep" [
   --quiet(-q)                           # Do not output matched lines; instead, exit with status 0 when there is a match and with non-zero status when there isn’t.
   ...pathspecs: string                  # Target pathspecs to limit the scope of the search.
 ]
+
+
+def gitac [] {
+    git add --all
+    git commit -m 'update'
+}
+def gitp [] {
+    git push origin
+}

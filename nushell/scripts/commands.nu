@@ -25,18 +25,3 @@ def dell [] {
 def nfs-mount [] {
     sudo mount -t nfs -o resvport,rw,noowners 192.168.31.200:/home/mering/share/nfs /Users/mering/share/nfs
 }
-
-def 'kb pods' [] {
-    kubectl get pods
-}
-def 'kb logs' [name:string] {
-    kubectl logs $name
-}
-
-def gitac [] {
-    git add --all
-    git commit -m 'update'
-}
-def gitp [] {
-    git push origin
-}

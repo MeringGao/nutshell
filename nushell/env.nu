@@ -114,3 +114,4 @@ source ~/projects/nushell/nushell/scripts/git.nu
 source ~/projects/nushell/nushell/scripts/pytest.nu
 source ~/projects/nushell/nushell/scripts/rg.nu
 source ~/projects/nushell/nushell/scripts/rustup.nu
+source ~/projects/nushell/nushell/scripts/kubectl.nu
