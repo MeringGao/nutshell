@@ -94,3 +94,12 @@ def 'kb logs deploy' [name:string@"nu-complete kubectl deploy" -f] {
 def 'kb logs' [name:string] {
     kubectl logs $name
 }
+
+
+def kubeexec [name sh:string="bin/bash"] {
+    kubectl exec $'(kubectl get pods |from ssv|where NAME =~ $name |get NAME |last)' -c $name -it -- $sh
+}
+
+def broker-ide [] {
+    kubectl exec $'(kubectl get pods |from ssv|where NAME =~ broker-ide |get NAME |last)' -c broker-ide -it -- /bin/bash -c "cd /home/shanshangao && su shanshangao && exec zsh"
+}

@@ -1,6 +1,5 @@
 format="""
-$hostname\
-$directory\
+mac:$directory\
 $git_branch\
 $git_commit\
 $git_state\
@@ -19,7 +18,7 @@ $sudo\
 $cmd_duration\
 $kubernetes\
 $line_break\
-$character
+$shell$character
 """
 
 # format="$all"
@@ -55,11 +54,13 @@ truncation_length=4
 use_logical_path=false
 
 [kubernetes]
-format = '[⛵$user\($namespace\)]($style) '
+format = '[$symbol$namespace]($style) '
 disabled=false
 
 [python]
-format='[$symbol${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+format='[$virtualenv-$version ]($style)'
 
 [golang]
-format='[$symbol($version )]($style)'
+format='[go\($version\) ]($style)'
+[shell]
+disabled=false
