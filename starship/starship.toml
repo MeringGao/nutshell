@@ -32,7 +32,6 @@ add_newline = false
 # Set 'foo' as custom color palette
 palette = 'foo'
 
-
 [palettes.foo]
 # Overwrite existing color
 blue = '21'
@@ -54,7 +53,7 @@ truncation_length=4
 use_logical_path=false
 
 [kubernetes]
-format = '[$symbol$namespace]($style) '
+format = '[k8s\($namespace\) ]($style)'
 disabled=false
 
 [python]
@@ -62,5 +61,7 @@ format='[$virtualenv-$version ]($style)'
 
 [golang]
 format='[go\($version\) ]($style)'
+
 [shell]
 disabled=false
+
