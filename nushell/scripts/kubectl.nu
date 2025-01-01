@@ -92,23 +92,7 @@ def 'kb logs deploy' [name:string@"nu-complete kubectl deploy" -f] {
     $output
 }
 
-export extern "kubectl logs" [
-  pod: string@"nu-complete kubectl pods"
-  --all-containers # Get all containers' logs in the pod(s).
-  --all-pods # Get logs from all pod(s). Sets prefix to true.
-  --container(-c) # Print the logs of this container
-  --follow(-f) # Specify if the logs should be streamed.
-  --ignore-errors # If watching / following pod logs, allow for any errors that occur to be non-fatal
-  --insecure-skip-tls-verify-backend # Skip verifying the identity of the kubelet that logs are requested from.  In theory, an attacker could provide invalid log content back. You might want to use this if your kubelet serving certificates have expired.
-  --limit-bytes:int # Maximum bytes of logs to return. Defaults to no limit.
-  --max-log-requests # Specify maximum number of concurrent logs to follow when using by a selector. Defaults to 5.
-  --pod-running-timeout:string # The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod  is running
-  --prefix # Prefix each log line with the log source (pod name and container name)
-  --previous(-p) # If true, print the logs for the previous instance of the container in a pod if it exists.
 
-  --selector(-l) # Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
-
-<<<<<<< HEAD
 def 'kb logs' [name:string] {
     kubectl logs $name
 }
@@ -121,10 +105,3 @@ def kubeexec [name sh:string="bin/bash"] {
 def broker-ide [] {
     kubectl exec $'(kubectl get pods |from ssv|where NAME =~ broker-ide |get NAME |last)' -c broker-ide -it -- /bin/bash -c "cd /home/shanshangao && su shanshangao && exec zsh"
 }
-=======
-  --since # Only return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to all logs. Only one of since-time / since may be used.
-  --since-time #  Only return logs after a specific date (RFC3339). Defaults to all logs. Only one of since-time / since may be used.
-  --tail #Lines of recent log file to display. Defaults to -1 with no selector, showing all log lines otherwise 10, if a selector is provided.
-  --timestamps # Include timestamps on each line in the log output
-]
->>>>>>> 015ad517af6496320a047d4198b3bb309d1ab639
