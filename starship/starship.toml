@@ -53,7 +53,7 @@ truncation_length=4
 use_logical_path=false
 
 [kubernetes]
-format = '[k8s\($namespace\) ]($style)'
+format = '[$symbol $namespace/$cluster ]($style)'
 disabled=false
 
 [python]
